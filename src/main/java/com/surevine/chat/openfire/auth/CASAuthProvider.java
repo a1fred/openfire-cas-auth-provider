@@ -64,6 +64,7 @@ public class CASAuthProvider implements AuthProvider {
 	 * @return <code>true</code> if plain text password authentication is
 	 *         supported by this AuthProvider, otherwise <code>false</code>.
 	 */
+    @Override
 	public boolean isPlainSupported() {
 		return true;
 	}
@@ -75,6 +76,7 @@ public class CASAuthProvider implements AuthProvider {
 	 * @return <code>true</code> if digest authentication is supported by this
 	 *         AuthProvider, otherwise <code>false</code>.
 	 */
+    @Override
 	public boolean isDigestSupported() {
 		return false;
 	}
@@ -100,6 +102,7 @@ public class CASAuthProvider implements AuthProvider {
 	 *             If Openfire is not able to authenticate itself into the user
 	 *             and group system.
 	 */
+    @Override
 	public void authenticate(final String username, final String password)
 			throws UnauthorizedException, ConnectionException,
 			InternalUnauthenticatedException {
@@ -137,6 +140,7 @@ public class CASAuthProvider implements AuthProvider {
 	 *             If Openfire is not able to authenticate itself into the user
 	 *             and group system.
 	 */
+    @Override
 	public void authenticate(final String username, final String token,
 			final String digest) throws UnauthorizedException,
 			ConnectionException, InternalUnauthenticatedException {
@@ -157,6 +161,7 @@ public class CASAuthProvider implements AuthProvider {
 	 *             If the provider does not support the operation (this is an
 	 *             optional operation).
 	 */
+    @Override
 	public String getPassword(final String username)
 			throws UserNotFoundException, UnsupportedOperationException {
 		throw new UnsupportedOperationException(
@@ -178,6 +183,7 @@ public class CASAuthProvider implements AuthProvider {
 	 *             If the provider does not support the operation (this is an
 	 *             optional operation).
 	 */
+    @Override
 	public void setPassword(final String username, final String password)
 			throws UserNotFoundException, UnsupportedOperationException {
 		throw new UnsupportedOperationException(
@@ -193,8 +199,13 @@ public class CASAuthProvider implements AuthProvider {
 	 * @return true if this UserProvider is able to retrieve user passwords from
 	 *         the backend user store.
 	 */
+    @Override
 	public boolean supportsPasswordRetrieval() {
 		return false;
 	}
 
+    @Override
+    public boolean isScramSupported() {
+        return false;
+    }	
 }

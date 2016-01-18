@@ -22,7 +22,7 @@
 	<artifactId>openfire-cas-plugin</artifactId>
 	<packaging>jar</packaging>
 	<name>Openfire CAS Authentication Provider</name>
-	<version>1.0.4-SNAPSHOT</version>
+	<version>1.0.5-SNAPSHOT</version>
 	<description>
 		The Surevine Openfire CAS Authentication Plugin is an extension to Openfire that provides authentication services through CAS.
 	</description>
@@ -36,7 +36,7 @@
 			<dependency>
 				<groupId>org.igniterealtime</groupId>
 				<artifactId>openfire</artifactId>
-				<version>3.10.2</version>
+				<version>4.0.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.jasig.cas.client</groupId>
