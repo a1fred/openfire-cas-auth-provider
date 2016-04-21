@@ -73,6 +73,7 @@ public class CASAuthTicketValidator {
 			final String proxyTicket) throws UnauthorizedException {
 		Assertion assertion = null;
 		AttributePrincipal principal = null;
+		proxyValidator.setAcceptAnyProxy(true);
 
 		if (Log.isDebugEnabled()) {
 			Log
